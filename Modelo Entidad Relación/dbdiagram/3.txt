@@ -1,0 +1,21 @@
+Table PROFESOR {
+  "# dni" integer   
+  "* nombre" varchar   
+  "* direccion" varchar
+  "* telefono" varchar 
+}  
+
+Table MODULO {   
+  "# codigo_modulo" integer   
+  "* nombre" varchar   
+}  
+
+Table ALUMNO {   
+  "# numero_expediente" integer   
+  "* nombre" varchar   
+  "* apellidos" varchar   
+  "* fecha_nacimiento" timestamp   
+}  
+
+Ref: PROFESOR."* nombre" < MODULO."# codigo_modulo"
+Ref: MODULO."# codigo_modulo" <> ALUMNO."* nombre"

@@ -1,0 +1,29 @@
+Table PACIENTE {
+  "# codigo_paciente" integer
+  "* nombre" varchar
+  "* apellido" varchar
+  "* direccion" varchar
+  "* localidad" varchar
+  "* provincia" varchar
+  "* codigo_postal" integer
+  "* telefono" varchar
+  "* fecha_nacimiento" timestamp
+}
+
+Table INGRESO {
+  "# codigo_ingreso" integer
+  "* numero_habitacion" integer
+  "* cama" varchar
+  "* fecha_ingreso" timestamp
+}
+
+Table MEDICO {
+  "# codigo_medico" integer
+  "* nombre" varchar
+  "* apellido" varchar
+  "* telefono" varchar
+  "* especialidad" varchar
+}
+
+Ref: PACIENTE."* localidad" < INGRESO."* numero_habitacion"
+Ref: INGRESO."* numero_habitacion" > MEDICO."* apellido"

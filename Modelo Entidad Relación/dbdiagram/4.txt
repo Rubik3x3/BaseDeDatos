@@ -1,0 +1,26 @@
+Table COCHE{
+  "# matricula" varchar
+  "* marca" varchar
+  "* modelo" varchar
+  "° color" varchar
+  "* precio" float
+}
+
+Table CLIENTE{
+  "# codigo_interno" integer
+  "* cuit" integer
+  "* nombre" varchar
+  "* direccion" varchar
+  "° ciudad" varchar
+  "* telefono" varchar
+}
+
+Table REVISION{
+  "# codigo" integer
+  "* cambio_filtro" bool
+  "* cambio_aceite" bool
+  "* cambio_frenos" bool
+}
+
+Ref: COCHE."* modelo" > CLIENTE."* direccion"
+Ref: COCHE."* modelo" < REVISION."* cambio_filtro"

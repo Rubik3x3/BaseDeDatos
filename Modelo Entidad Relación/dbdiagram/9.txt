@@ -1,0 +1,40 @@
+Table GOL{
+  "# numero_goles" integer
+  "* minuto_gol" integer
+  "* descripcion_gol" varchar
+}
+
+Table PARTIDO{
+  "# codigo_partido" integer
+  "* fecha" timestamp
+  "* goles_local" integer
+  "* goles_visitante" integer
+}
+
+Table JUGADOR{
+  "# codigo_jugador" integer
+  "* nombre_jugador" varchar
+  "* fecha_nacimiento_jugador" timestamp
+  "* posicion" integer
+}
+
+Table PRESIDENTE{
+  "# dni" integer
+  "* nombre_presidente" varchar
+  "* fecha_nacimiento_presidente" timestamp
+  "* equipo" varchar 
+  "* año_eleccion" timestamp
+}
+
+Table EQUIPO{
+  "# codigo_equipo" integer
+  "* nombre_equipo" varchar
+  "* nombre_estadio" varchar
+  "* año_fundacion" timestamp
+  "* ciudad" varchar
+}
+
+Ref: GOL."# numero_goles" > PARTIDO."* fecha"
+Ref: GOL."# numero_goles" > JUGADOR."* nombre_jugador"
+Ref: JUGADOR."* nombre_jugador" > EQUIPO."* nombre_estadio"
+Ref: EQUIPO."* nombre_estadio" - PRESIDENTE."* fecha_nacimiento_presidente"

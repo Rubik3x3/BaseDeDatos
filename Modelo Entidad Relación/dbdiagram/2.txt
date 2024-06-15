@@ -1,0 +1,31 @@
+Table CAMIONERO {
+  "# dni" integer   
+  "* nombre" varchar   
+  "* salario" float   
+  "* direccion" varchar
+  "* telefono" varchar
+  "* lugar_residencia" varchar
+}  
+
+Table CAMION {   
+  "# matricula" varchar   
+  "* modelo" varchar   
+  "* tipo" varchar   
+  "* potencia" float   
+}  
+
+Table PAQUETE {   
+  "# codigo_paquete" integer   
+  "* descripcion" text   
+  "* destinatario" varchar   
+  "* direccion_destinatario" varchar   
+}
+
+Table PROVINCIA {
+  "# codigo_provincia" integer
+  "* nombre" varchar
+}
+
+Ref: CAMIONERO."* direccion" <> CAMION."* modelo"
+Ref: CAMION."* modelo" < PAQUETE."* descripcion"
+Ref: PAQUETE."* descripcion" > PROVINCIA."# codigo_provincia"

@@ -1,0 +1,41 @@
+Table COCHE_NUEVO{
+  "# matricula_nuevo" varchar
+  "* modelo_nuevo" varchar
+  "* marca_nuevo" varchar
+  "* color_nuevo" varchar
+  "* numero_unidades" integer
+}
+
+Table CLIENTE{
+  "# dni_cliente" integer
+  "* nombre_cliente" varchar
+  "* apellido_cliente" varchar
+  "* direccion" varchar
+  "* telefono" varchar
+}
+
+Table COCHE_USADO{
+  "# matricula_usado" varchar
+  "* modelo_usado" varchar
+  "* marca_usado" varchar
+  "* color_usado" varchar
+  "* kilometraje" integer
+}
+
+Table REPARACION{
+  "# codigo_reparacion" integer
+  "* horas_duracion" integer
+  "* fecha_reparacion" timestamp
+}
+
+Table MECANICO{
+  "# dni_mecanico" integer
+  "* nombre_mecanico" varchar
+  "* fecha_contratacion" timestamp
+  "* salario" float
+}
+
+Ref: COCHE_NUEVO."* marca_nuevo" > CLIENTE."* apellido_cliente"
+Ref: COCHE_USADO."* marca_usado" > CLIENTE."* apellido_cliente"
+Ref: MECANICO."* nombre_mecanico" <> REPARACION."* horas_duracion"
+Ref: COCHE_USADO."* marca_usado" < REPARACION."* horas_duracion"

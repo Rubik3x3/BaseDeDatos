@@ -1,0 +1,35 @@
+Table AUTOR{
+  "# codigo_autor" integer
+  "* nombre_autor" varchar
+}
+
+Table LIBRO{
+  "# isbn" integer
+  "* titulo" varchar
+  "* codigo" integer
+  "* editorial" varchar
+  "* numero_paginas" integer
+}
+
+Table EJEMPLAR{
+  "# codigo_ejemplar" integer
+  "* localizacion" varchar
+}
+
+Table PRESTAMO{
+  "# codigo_prestamo" integer
+  "* fecha_prestamo" timestamp
+  "* fecha_devolucion" timestamp
+}
+
+Table USUARIO{
+  "# codigo_usuario" integer
+  "* nombre_usuario" varchar
+  "* telefono" varchar
+  "° direccion" varchar
+}
+
+Ref: AUTOR."# codigo_autor" <> LIBRO."* codigo"
+Ref: LIBRO."* codigo" < EJEMPLAR."# codigo_ejemplar"
+Ref: EJEMPLAR."# codigo_ejemplar" > USUARIO."* nombre_usuario"
+Ref: PRESTAMO."* fecha_prestamo" > USUARIO."* nombre_usuario"

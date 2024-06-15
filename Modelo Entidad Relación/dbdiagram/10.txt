@@ -1,0 +1,42 @@
+Table ALUMNO{
+  "# dni_alumno" integer
+  "* nombre_alumno" varchar
+  "* apellidos_alumno" varchar
+  "* direccion_alumno" varchar
+  "* fecha_nacimiento_alumno" timestamp
+  "* codigo_postal_alumno" integer
+  "* telefono_alumno" varchar
+}
+
+Table PROFESOR{
+  "# dni_profesor" integer
+  "* nombre_profesor" varchar
+  "* apellidos_profesor" varchar
+  "* direccion_profesor" varchar
+  "* fecha_nacimiento_profesor" timestamp
+  "* codigo_postal_profesor" integer
+  "* telefono_profesor" varchar
+}
+
+Table ASIGNATURA{
+  "# codigo_asignatura" integer
+  "* nombre" varchar
+  "* horas_por_semana" integer
+}
+
+Table CURSO{
+  "# codigo_curso" integer
+  "* nombre" varchar
+}
+
+Table AULA{
+  "# codigo_aula" integer
+  "* piso" varchar
+  "* numero_pupitres" integer
+}
+
+Ref: PROFESOR."* direccion_profesor" < ASIGNATURA."* nombre"
+Ref: CURSO."# codigo_curso" < ASIGNATURA."* nombre"
+Ref: AULA."* piso" <> ASIGNATURA."* nombre"
+Ref: PROFESOR."* direccion_profesor" - CURSO."# codigo_curso"
+Ref: ALUMNO."* direccion_alumno" <> ASIGNATURA."* nombre"

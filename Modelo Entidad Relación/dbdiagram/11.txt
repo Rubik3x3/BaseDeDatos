@@ -1,0 +1,36 @@
+Table DEPARTAMENTO{
+  "# codigo_departamento" integer
+  "* nombre_departamento" varchar
+  "* presupuesto_anual" float
+}
+
+Table CENTRO_TRABAJO{
+  "# codigo_centro" integer
+  "* nombre_centro" varchar
+  "* poblacion" integer
+  "* direccion" varchar
+}
+
+Table EMPLEADO{
+  "# cuil" integer
+  "* nombre_empleado" varchar
+  "* fecha_alta_empresa" timestamp
+  "* numero_hijos" integer
+  "* salario" float
+}
+
+Table HABILIDAD_EMPLEADO{
+  "# codigo_habilidad" integer
+  "* descripcion" varchar
+}
+
+Table HIJO_EMPLEADO{
+  "# codigo_hijo" integer
+  "* nombre" varchar
+  "* fecha_nacimiento" timestamp
+}
+
+Ref: EMPLEADO."* fecha_alta_empresa" > DEPARTAMENTO."* nombre_departamento"
+Ref: DEPARTAMENTO."* nombre_departamento" > CENTRO_TRABAJO."* nombre_centro"
+Ref: EMPLEADO."* fecha_alta_empresa" < HIJO_EMPLEADO."* nombre"
+Ref: EMPLEADO."* fecha_alta_empresa" <> HABILIDAD_EMPLEADO."# codigo_habilidad"

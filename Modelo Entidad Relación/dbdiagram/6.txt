@@ -1,0 +1,25 @@
+Table CLIENTE {
+  "# codigo_cliente" integer   
+  "* nombre" varchar   
+  "* apellido" varchar   
+  "* direccion" varchar   
+  "* telefono" varchar 
+}  
+
+Table PRODUCTO {   
+  "# codigo_producto" integer   
+  "* descripcion" text   
+  "* precio" float   
+  "* numero_existencias" int  
+}  
+
+Table PROVEEDOR {   
+  "# codigo_proveedor" integer   
+  "* nombre" varchar   
+  "* apellido" varchar   
+  "* telefono" varchar   
+  "* especialidad" varchar 
+}  
+
+Ref: CLIENTE."* apellido" <> PRODUCTO."* descripcion"
+Ref: PRODUCTO."* descripcion" <> PROVEEDOR."* apellido"

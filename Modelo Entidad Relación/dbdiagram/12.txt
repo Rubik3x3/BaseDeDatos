@@ -1,0 +1,45 @@
+Table HOTEL{
+  "# codigo_hotel" integer
+  "* nombre_hotel" varchar
+  "* direccion" varchar
+  "* telefono" varchar
+  "* año_contruccion" timestamp
+}
+
+Table CATEGORIA{
+  "# codigo_categoria" integer
+  "* iva" varchar
+  "* descripcion" varchar
+}
+
+Table HABITACION_HOTEL{
+  "# codigo_habitacion" integer
+  "* tipo_habitacion" varchar
+}
+
+Table PARTICULAR{
+  "# codigo_particular" integer
+  "* nombre_particular" varchar
+  "* telefono_particular" varchar
+  "* direccion_agencia" varchar
+}
+
+Table AGENCIA_VIAJE{
+  "# codigo_agencia" integer
+  "* nombre_agencia" varchar
+  "* telefono_agencia" varchar
+  "* direccion_agencia" varchar
+}
+
+Table RESERVA{
+  "# codigo_reserva" integer
+  "* precio" float
+  "* fecha_inicio" timestamp
+  "* fecha_fin" timestamp
+}
+
+Ref: RESERVA."* precio" > AGENCIA_VIAJE."* nombre_agencia"
+Ref: RESERVA."* precio" > PARTICULAR."* nombre_particular"
+Ref: HOTEL."* direccion" < HABITACION_HOTEL."# codigo_habitacion"
+Ref: CATEGORIA."# codigo_categoria" - HOTEL."* direccion"
+Ref: HOTEL."* direccion" < RESERVA."* precio"
