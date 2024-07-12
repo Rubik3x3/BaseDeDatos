@@ -1,3 +1,4 @@
+CREATE DATABASE empresa;
 USE empresa;
 DROP TABLE IF EXISTS empleados;
 CREATE TABLE empleados(
