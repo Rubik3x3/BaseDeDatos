@@ -2,7 +2,7 @@ CREATE DATABASE empresa;
 USE empresa;
 DROP TABLE IF EXISTS empleados;
 CREATE TABLE empleados(
-	documento integer unsigned primary key,
+    documento integer unsigned primary key,
     nombre varchar(30) not null,
     sexo char(1),
     domicilio varchar(30),
@@ -17,7 +17,7 @@ INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, 
 values (1, "Pablo Rodriguez", 'm', "Galvan","Salta", 22, '2015-12-17','2015-12-17',50.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (2, "Pablo Rodriguez", 'm', "Galvan","Salta", 22, '2015-12-17','2015-12-17',40.50);
+values (2, "Pablo Hernandez", 'm', "Galvan","Salta", 22, '2015-12-17','2015-12-17',40.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
 values (3, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',30.50);
@@ -51,3 +51,4 @@ SELECT sum(sueldobasico) FROM empleados WHERE fechaingreso >= '2018-08-15';
 SELECT max(sueldobasico) FROM empleados WHERE localidad = "Capital Federal";
 SELECT min(sueldobasico) FROM empleados;
 SELECT avg(sueldobasico) FROM empleados;
+UPDATE empleados set documento=25399178 WHERE (nombre = 'Pablo Rodriguez') and (localidad = 'Salta');
