@@ -28,7 +28,7 @@ VALUES
     (5, "Pablo Rodriguez", 'm', "Galvan", "Córdoba", 22, '2010-12-17', '1980-12-17', 100.50),
     (6, "Pablo Rodriguez", 'm', "Galvan", "Córdoba", 22, '2010-12-17', '1980-12-17', 20.50),
     (7, "Pablo Rodriguez", 'm', "Galvan", "Mendoza", 22, '2010-12-17', '1980-12-17', 50.50),
-    (8, "Pablo Rodriguez", 'm', "Galvan", "Mendoza", 22, '2020-12-17', '1980-12-17', 80.50),
+    (8, "Pablo Rodriguez", 'm', "Galvan", "Mendoza", 22, '2020-12-17', '1980-08-17', 80.50),
     (9, "Pablo Rodriguez", 'm', "Galvan", "Misiones", 22, '2010-12-17', '1980-12-17', 95.50),
     (10, "Pablo Rodriguez", 'm', "Galvan", "Misiones", 22, '2023-12-17', '1980-12-17', 35.50);
 
