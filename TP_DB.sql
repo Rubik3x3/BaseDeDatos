@@ -1,54 +1,75 @@
+-- 1)
 CREATE DATABASE empresa;
 USE empresa;
+
+-- 2)
 DROP TABLE IF EXISTS empleados;
+
+-- 3)
 CREATE TABLE empleados(
-	documento integer unsigned primary key,
-    nombre varchar(30) not null,
-    sexo char(1),
-    domicilio varchar(30),
-    localidad varchar(25),
-    telefono integer unsigned not null,
-    fechaingreso date not null,
-    fechanacimiento date not null,
-    sueldobasico dec(5,2) unsigned not null
+    documento INTEGER UNSIGNED PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    sexo CHAR(1),
+    domicilio VARCHAR(30),
+    localidad VARCHAR(25),
+    telefono INTEGER UNSIGNED NOT NULL,
+    fechaingreso DATE NOT NULL,
+    fechanacimiento DATE NOT NULL,
+    sueldobasico DECIMAL(5,2) NOT NULL
 );
 
+-- 4)
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (1, "Pablo Rodriguez", 'm', "Galvan","Salta", 22, '2015-12-17','2015-12-17',50.50);
+VALUES 
+    (1, "Pablo Rodriguez", 'm', "Galvan", "Salta", 22, '2015-12-17', '2015-12-17', 50.50),
+    (2, "Pablo Hernandez", 'm', "Galvan", "Salta", 22, '2015-12-17', '2015-12-17', 40.50),
+    (3, "Pablo Rodriguez", 'm', "Galvan", "Capital Federal", 22, '2010-12-17', '1980-12-17', 30.50),
+    (4, "Pablo Rodriguez", 'm', "Galvan", "Capital Federal", 22, '2010-12-17', '1980-12-17', 70.50),
+    (5, "Pablo Rodriguez", 'm', "Galvan", "Córdoba", 22, '2010-12-17', '1980-12-17', 100.50),
+    (6, "Pablo Rodriguez", 'm', "Galvan", "Córdoba", 22, '2010-12-17', '1980-12-17', 20.50),
+    (7, "Pablo Rodriguez", 'm', "Galvan", "Mendoza", 22, '2010-12-17', '1980-12-17', 50.50),
+    (8, "Pablo Rodriguez", 'm', "Galvan", "Mendoza", 22, '2020-12-17', '1980-12-17', 80.50),
+    (9, "Pablo Rodriguez", 'm', "Galvan", "Misiones", 22, '2010-12-17', '1980-12-17', 95.50),
+    (10, "Pablo Rodriguez", 'm', "Galvan", "Misiones", 22, '2023-12-17', '1980-12-17', 35.50);
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (2, "Pablo Hernandez", 'm', "Galvan","Salta", 22, '2015-12-17','2015-12-17',40.50);
+-- 5)
+SELECT * FROM empleados ORDER BY documento ASC;
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (3, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',30.50);
+-- 6)
+SELECT * FROM empleados ORDER BY sueldobasico DESC;
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (4, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',70.50);
+-- 7)
+SELECT COUNT(*) FROM empleados WHERE fechaingreso >= '2015-01-01';
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (5, "Pablo Rodriguez", 'm', "Galvan","Córdoba", 22, '2010-12-17','1980-12-17',100.50);
+-- 8)
+SELECT COUNT(*) FROM empleados WHERE sueldobasico IS NOT NULL;
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (6, "Pablo Rodriguez", 'm', "Galvan","Córdoba", 22, '2010-12-17','1980-12-17',20.50);
+-- 9)
+SELECT SUM(sueldobasico) FROM empleados WHERE fechaingreso > '2018-08-15';
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (7, "Pablo Rodriguez", 'm', "Galvan","Mendoza", 22, '2010-12-17','1980-12-17',50.50);
+-- 10)
+SELECT MAX(sueldobasico) FROM empleados WHERE localidad = "Capital Federal";
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (8, "Pablo Rodriguez", 'm', "Galvan","Mendoza", 22, '2020-12-17','1980-12-17',80.50);
+-- 11)
+SELECT MIN(sueldobasico) FROM empleados;
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (9, "Pablo Rodriguez", 'm', "Galvan","Misiones", 22, '2010-12-17','1980-12-17',95.50);
+-- 12)
+SELECT AVG(sueldobasico) FROM empleados;
 
-INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (10, "Pablo Rodriguez", 'm', "Galvan","Misiones", 22, '2023-12-17','1980-12-17',35.50);
+-- 13)
+SELECT 
+    SUM(CASE WHEN sexo = 'f' THEN 1 ELSE 0 END) AS ramos_rosas,
+    SUM(CASE WHEN sexo = 'm' THEN 1 ELSE 0 END) AS corbatas
+FROM empleados
+WHERE MONTH(fechanacimiento) = 8;
 
-SELECT * FROM empleados order by documento asc;
-SELECT * FROM empleados order by sueldobasico desc;
-SELECT count(*) FROM empleados WHERE fechaingreso >= '2015-01-01';
-SELECT cout(*) FROM empleados WHERE sueldobasico is not null;
-SELECT sum(sueldobasico) FROM empleados WHERE fechaingreso >= '2018-08-15';
-SELECT max(sueldobasico) FROM empleados WHERE localidad = "Capital Federal";
-SELECT min(sueldobasico) FROM empleados;
-SELECT avg(sueldobasico) FROM empleados; 
-SELECT count(*) from empleados group by fechanacimiento;
+-- 14)
+SELECT 
+    YEAR(fechaingreso) AS año_ingreso,
+    COUNT(*) AS cantidad_empleados
+FROM empleados
+GROUP BY YEAR(fechaingreso);
+
+-- 15)
+UPDATE empleados SET documento = 25399178 WHERE nombre = "Pablo Rodriguez" AND localidad = "Salta";
+
