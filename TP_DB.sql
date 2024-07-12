@@ -2,7 +2,7 @@ CREATE DATABASE empresa;
 USE empresa;
 DROP TABLE IF EXISTS empleados;
 CREATE TABLE empleados(
-    documento integer unsigned primary key,
+	documento integer unsigned primary key,
     nombre varchar(30) not null,
     sexo char(1),
     domicilio varchar(30),
@@ -48,3 +48,6 @@ SELECT * FROM empleados order by sueldobasico desc;
 SELECT count(*) FROM empleados WHERE fechaingreso >= '2015-01-01';
 SELECT count(*) FROM empleados WHERE sueldobasico is not null;
 SELECT sum(sueldobasico) FROM empleados WHERE fechaingreso >= '2018-08-15';
+SELECT max(sueldobasico) FROM empleados WHERE localidad = "Capital Federal";
+SELECT min(sueldobasico) FROM empleados;
+SELECT avg(sueldobasico) FROM empleados;
