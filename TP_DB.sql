@@ -1,3 +1,4 @@
+CREATE DATABASE empresa;
 USE empresa;
 DROP TABLE IF EXISTS empleados;
 CREATE TABLE empleados(
@@ -16,7 +17,7 @@ INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, 
 values (22, "Pablo Rodriguez", 'm', "Galvan","Salta", 22, '2015-12-17','2015-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
+values (22, "Pablo Rodriguez", 'm', "Galvan","Salta", 22, '2015-12-17','2015-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
 values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
@@ -25,19 +26,19 @@ INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, 
 values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
+values (22, "Pablo Rodriguez", 'm', "Galvan","Córdoba", 22, '2010-12-17','1980-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
+values (22, "Pablo Rodriguez", 'm', "Galvan","Córdoba", 22, '2010-12-17','1980-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
+values (22, "Pablo Rodriguez", 'm', "Galvan","Mendoza", 22, '2010-12-17','1980-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
+values (22, "Pablo Rodriguez", 'm', "Galvan","Mendoza", 22, '2010-12-17','1980-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
+values (22, "Pablo Rodriguez", 'm', "Galvan","Misiones", 22, '2010-12-17','1980-12-17',200.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (22, "Pablo Rodriguez", 'm', "Galvan","Capital Federal", 22, '2010-12-17','1980-12-17',200.50);
+values (22, "Pablo Rodriguez", 'm', "Galvan","Misiones", 22, '2010-12-17','1980-12-17',200.50);
