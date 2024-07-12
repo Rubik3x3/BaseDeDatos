@@ -52,3 +52,4 @@ SELECT max(sueldobasico) FROM empleados WHERE localidad = "Capital Federal";
 SELECT min(sueldobasico) FROM empleados;
 SELECT avg(sueldobasico) FROM empleados;
 UPDATE empleados set documento=25399178 WHERE (nombre = 'Pablo Rodriguez') and (localidad = 'Salta');
+SELECT count(*) from empleados group by fechanacimiento;
