@@ -1,7 +1,8 @@
+CREATE DATABASE empresa;
 USE empresa;
 DROP TABLE IF EXISTS empleados;
 CREATE TABLE empleados(
-    documento integer unsigned primary key,
+	documento integer unsigned primary key,
     nombre varchar(30) not null,
     sexo char(1),
     domicilio varchar(30),
@@ -34,13 +35,16 @@ INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, 
 values (7, "Pablo Rodriguez", 'm', "Galvan","Mendoza", 22, '2010-12-17','1980-12-17',50.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (8, "Pablo Rodriguez", 'm', "Galvan","Mendoza", 22, '2010-12-17','1980-12-17',80.50);
+values (8, "Pablo Rodriguez", 'm', "Galvan","Mendoza", 22, '2020-12-17','1980-12-17',80.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
 values (9, "Pablo Rodriguez", 'm', "Galvan","Misiones", 22, '2010-12-17','1980-12-17',95.50);
 
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
-values (10, "Pablo Rodriguez", 'm', "Galvan","Misiones", 22, '2010-12-17','1980-12-17',35.50);
+values (10, "Pablo Rodriguez", 'm', "Galvan","Misiones", 22, '2023-12-17','1980-12-17',35.50);
 
 SELECT * FROM empleados order by documento asc;
 SELECT * FROM empleados order by sueldobasico desc;
+SELECT count(*) FROM empleados WHERE fechaingreso >= '2015-01-01';
+SELECT count(*) FROM empleados WHERE sueldobasico is not null;
+SELECT sum(sueldobasico) FROM empleados WHERE fechaingreso >= '2018-08-15';
