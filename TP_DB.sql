@@ -1,7 +1,7 @@
 USE empresa;
 DROP TABLE IF EXISTS empleados;
 CREATE TABLE empleados(
-	documento integer unsigned primary key,
+    documento integer unsigned primary key,
     nombre varchar(30) not null,
     sexo char(1),
     domicilio varchar(30),
