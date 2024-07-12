@@ -21,16 +21,16 @@ CREATE TABLE empleados(
 -- 4)
 INSERT INTO empleados (documento, nombre, sexo, domicilio, localidad, telefono, fechaingreso, fechanacimiento, sueldobasico) 
 VALUES 
-    (1, "Pablo Rodriguez", 'M', "Calle Falsa 123", "Salta", '111-222-333', '2021-01-15', '1990-05-20', 55.75),
-    (2, "Pablo Rodriguez", 'M', "Av. Libertador 456", "Salta", '222-333-444', '2020-02-25', '1985-08-10', 50.50),
-    (3, "Pablo Rodriguez", 'M', "Avenida Rivadavia 789", "Capital Federal", '333-444-555', '2019-03-05', '1988-11-15', 65.50),
-    (4, "Pablo Rodriguez", 'M', "Calle Corrientes 1010", "Capital Federal", '444-555-666', '2018-04-10', '1992-12-25', 72.25),
-    (5, "Pablo Rodriguez", 'M', "Calle Belgrano 2020", "Córdoba", '555-666-777', '2017-05-20', '1986-07-30', 60.00),
-    (6, "Pablo Rodriguez", 'M', "Av. San Martin 3030", "Córdoba", '666-777-888', '2016-06-30', '1991-03-05', 52.50),
-    (7, "Pablo Rodriguez", 'M', "Avenida Santa Fe 4040", "Mendoza", '777-888-999', '2015-07-15', '1987-01-20', 68.75),
-    (8, "Pablo Rodriguez", 'M', "Calle Cabildo 5050", "Mendoza", '888-999-000', '2014-08-25', '1993-06-15', 74.00),
-    (9, "Pablo Rodriguez", 'M', "Av. de Mayo 6060", "Misiones", '999-000-111', '2013-09-10', '1992-11-01', 80.50),
-    (10, "Pablo Rodriguez", 'M', "Calle 7 de Julio 7070", "Misiones", '000-111-222', '2012-10-20', '1994-04-25', 90.00);
+    (1, "Pablo Rodriguez", 'M', "Galvan 123", "Salta", '111-222-333', '2021-01-15', '1990-05-20', 55.75),
+    (2, "Dionisio Miguel", 'M', "Av. Libertador 456", "Salta", '222-333-444', '2020-02-25', '1985-08-10', 50.50),
+    (3, "Soraya Trillo", 'F', "Avenida Rivadavia 789", "Capital Federal", '333-444-555', '2019-03-05', '1988-11-15', 65.50),
+    (4, "Itziar Echevarria", 'F', "Calle Corrientes 1010", "Capital Federal", '444-555-666', '2018-04-10', '1992-12-25', 72.25),
+    (5, "Eduardo Castañeda", 'M', "Calle Belgrano 2020", "Córdoba", '555-666-777', '2017-05-20', '1986-07-30', 60.00),
+    (6, "Ruben Exposito", 'M', "Av. San Martin 3030", "Córdoba", '666-777-888', '2016-06-30', '1991-03-05', 52.50),
+    (7, "Montserrat Carpio", 'M', "Avenida Santa Fe 4040", "Mendoza", '777-888-999', '2015-07-15', '1987-01-20', 68.75),
+    (8, "Jacinta Tortosa", 'F', "Calle Cabildo 5050", "Mendoza", '888-999-000', '2014-08-25', '1993-06-15', 74.00),
+    (9, "Emiliano Ripoll", 'M', "Av. de Mayo 6060", "Misiones", '999-000-111', '2013-09-10', '1992-11-01', 80.50),
+    (10, "Almudena Baena", 'F', "Calle 7 de Julio 7070", "Misiones", '000-111-222', '2012-10-20', '1994-04-25', 90.00);
 
 -- 5)
 SELECT * FROM empleados ORDER BY documento ASC;
