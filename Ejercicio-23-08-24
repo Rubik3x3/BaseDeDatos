@@ -1,0 +1,49 @@
+-- Una empresa tiene registrados sus clientes en una tabla "clientes"
+-- tambien otra tabla "provincias" donde contienen los nombres de las provincias
+
+-- CREATE DATABASE empresa;
+USE empresa;
+
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS provincias;
+
+CREATE TABLE clientes(
+codigo int unsigned auto_increment primary key,
+	nombre varchar(30) not null,
+    domicilio varchar(30),
+    ciudad varchar(20),
+    codigo_provincia tinyint unsigned,
+    telefono varchar(11)
+);
+
+CREATE TABLE provincias(
+	codigo tinyint unsigned auto_increment primary key,
+    nombre varchar(20)
+);
+
+INSERT INTO clientes(nombre, domicilio, ciudad, codigo_provincia, telefono)
+	VALUES
+		("Rodriguez Pedro","Galvan","Ciudad de Salta",4,"1149494949"),
+        ("Franco Talarico","Galvan","CABA",1,"1149494949"),
+        ("Fabrizio Monterotti","Galvan","Ciudad",2,"1149494949")
+	;
+
+INSERT INTO provincias(nombre)
+	VALUES
+		("Buenos Aires"),
+        ("Córdoba"),
+        ("Catamarca"),
+        ("Salta")
+	;
+
+SELECT * FROM provincias;
+SELECT * FROM clientes;
+
+SELECT * FROM clientes AS c
+	JOIN provincias AS p
+    ON c.codigo_provincia=p.codigo;
+
+SELECT c.nombre, c.ciudad, p.nombre FROM clientes AS c
+	JOIN provincias AS p
+    ON c.codigo_provincia=p.codigo
+    WHERE c.nombre="Rodriguez Pedro" AND p.nombre="Salta";
