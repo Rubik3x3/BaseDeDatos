@@ -50,8 +50,8 @@ select s.documento,nombre,i.deporte,i.año,i.matricula
 -- 6)
 insert into inscriptos values ('26333444','basquet','2016','n');
  
- -- 7)
- select nombre,i.documento,deporte,i.año,i.matricula
+-- 7)
+select nombre,i.documento,deporte,i.año,i.matricula
   from socios as s
   right join inscriptos as i
   on s.documento=i.documento;
