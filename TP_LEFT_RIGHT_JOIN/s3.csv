@@ -1,0 +1,9 @@
+nombre,documento,deporte,año,matricula
+"Abdeslam Espinoza",22333444,natacion,2015,s
+"Abdeslam Espinoza",22333444,natacion,2016,n
+"Maria Lopez",23333444,natacion,2015,s
+"Maria Lopez",23333444,natacion,2016,s
+"Maria Lopez",23333444,tenis,2016,s
+"Victor Menendez",24333444,basquet,2016,n
+"Victor Menendez",24333444,tenis,2016,n
+NULL,26333444,basquet,2016,n
