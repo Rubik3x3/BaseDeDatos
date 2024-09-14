@@ -9,7 +9,7 @@ CREATE TABLE empleados (
     sexo CHAR(1),
     domicilio VARCHAR(30),
     localidad VARCHAR(25),
-    telefono INTEGER UNSIGNED NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
     fechaingreso DATE NOT NULL,
     fechanacimiento DATE NOT NULL,
     sueldobasico DECIMAL(5,2) NOT NULL
@@ -60,7 +60,7 @@ HAVING AVG(sueldobasico) > 100;
 SELECT CONCAT('Hola', ' Buenos dias ?') AS Cadena_Concatenada;
 
 -- 7)
-SELECT CONCAT('Cordoba', '-', 'Santa Fe', '-', 'Mendoza') AS Ciudades_Concatenadas;
+SELECT CONCAT('Cordoba', '-', 'Santa Fe', '-', 'Mendoza') AS Provincias_Concatenadas;
 
 -- 8)
 -- 8.1)
